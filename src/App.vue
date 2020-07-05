@@ -1,32 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <ui-header>
+      <h1><router-link to="/">Pottery Shop Vue</router-link></h1>
+      <ui-navbar>
+        <ui-search/>
+        <router-link to="/cart">
+          <ui-cart-link :count="2"></ui-cart-link>
+        </router-link>
+      </ui-navbar>
+    </ui-header>
+    <ui-main>
+      <router-view/>
+    </ui-main>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style lang="scss">
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  a {
+    color: black;
+    text-decoration: none;
+  }
 </style>
